@@ -1,0 +1,104 @@
+.item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 15px 15px;
+  &.isDone {
+    span {
+      text-decoration: line-through;
+    }
+  }
+  .check {
+    input {
+      display: none;
+      &:checked + label::after {
+        display: block;
+      }
+      &:checked + div {
+        border: none;
+        &:after {
+          display: block;
+        }
+      }
+    }
+
+    div {
+      cursor: pointer;
+      position: relative;
+      height: 30px;
+      width: 30px;
+      border: 1px solid gray;
+      border-radius: 8px;
+      &::after {
+        display: none;
+        text-align: center;
+        content: url("../../../images/TodoItem/check.png");
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  .editInput {
+    width: 300px;
+    margin-left: 10px;
+    transition: all 0.4s ease;
+    font-size: 17px;
+    padding: 5px;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    &::placeholder {
+      color: #495057;
+    }
+    &:focus {
+      background-color: #fff;
+      border-color: #80bdff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      &::placeholder {
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+    }
+  }
+
+  .name {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .btnRemove,
+  .btnEdit,
+  .btnSave{
+    position: absolute;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    .delete,
+    .edit,
+    .saveIcon{
+      width: 35px;
+      height: 35px;
+      padding: 5px;
+      &:active {
+        background-color: gray;
+        border-radius: 5px;
+      }
+    }
+  }
+  .btnEdit,
+  .btnSave{
+    right: 52px;
+  }
+}
+

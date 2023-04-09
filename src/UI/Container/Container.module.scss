@@ -1,0 +1,10 @@
+@import "../../assets/mixins/mixins";
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  @include respondMobile {
+    padding: 0 15px;
+  }
+}
