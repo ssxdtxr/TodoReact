@@ -7,12 +7,9 @@ export interface ITodoList {
     setTodos: (todos: ITodo[]) => void
 }
 export const TodoList:FC<ITodoList> = ({todos, setTodos}) => {
-    const completedTodos = () => {
-        return todos.filter(todo => todo.isDone).length
-    }
 
-    const allTodos = () => {
-        return todos.length
+    const completedTodos = (): number => {
+        return todos.filter(todo => todo.isDone).length
     }
 
     return <>
@@ -38,7 +35,7 @@ export const TodoList:FC<ITodoList> = ({todos, setTodos}) => {
                 ?
                 <div className={styles.todosInfo}>
                     <h3 className={styles.completed}>Completed: {completedTodos()}</h3>
-                    <h3 className={styles.all}>ALL Todos: {allTodos()}</h3>
+                    <h3 className={styles.all}>ALL Todos: {todos.length}</h3>
                 </div>
                 :
                 <></>
