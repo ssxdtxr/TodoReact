@@ -31,9 +31,11 @@
       content: url("../../../images/TodoItem/check.png");
       align-items: center;
       position: absolute;
-      top: 0;
-
+      top: -3px;
     }
+  }
+  @media screen and (max-width: 400px) {
+    padding: 20px 0;
   }
 }
 
