@@ -34,8 +34,8 @@ export const TodoList:FC<ITodoList> = ({todos, setTodos}) => {
             todos.length
                 ?
                 <div className={styles.todosInfo}>
-                    <h3 className={styles.completed}>Completed: {completedTodos()}</h3>
-                    <h3 className={styles.all}>ALL Todos: {todos.length}</h3>
+                    <div className={styles.completed}>Completed: {completedTodos()}</div>
+                    <div className={styles.all}>ALL Todos: {todos.length}</div>
                 </div>
                 :
                 <></>
